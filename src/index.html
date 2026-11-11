@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Sanctuary — Sakura Shrine & Spirit Fox (Three.js & AI)</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D Canvas -->
+    <canvas class="webgl"></canvas>
+
+    <!-- Екран завантаження святилища -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-symbol">🌸</div>
+            <h1 class="loading-title">ZEN SANCTUARY</h1>
+            <p class="loading-subtitle">Святилище Сакури: ініціалізація Дзен-саду, PBR матеріалів, GLSL ставка та фізики каміння...</p>
+            <div class="loading-bar-wrapper">
+                <div id="loading-bar" class="loading-bar"></div>
+            </div>
+            <span id="loading-text" class="loading-text">Завантаження саду: 0%</span>
+        </div>
+    </div>
+
+    <!-- Верхній HUD -->
+    <header class="hud-top">
+        <div class="hud-brand">
+            <div class="hud-icon">⛩️</div>
+            <div class="hud-titles">
+                <h1 class="project-title">ZEN SANCTUARY: SAKURA SHRINE</h1>
+                <p class="project-subtitle">Three.JS & AI Final Project • GLSL Water Caustics • Cannon-es Zen Physics</p>
+            </div>
+        </div>
+        <div class="hud-badges">
+            <span class="badge badge-cyan">GLSL Водна Каустика</span>
+            <span class="badge badge-amber">Дзен-Фізика Каміння</span>
+            <span class="badge badge-purple">ACES Filmic HDR</span>
+            <span class="badge badge-green">High-Poly Дракон (91k) &amp; Лисиця</span>
+        </div>
+    </header>
+
+    <!-- Нижня панель керування садом -->
+    <nav class="hud-bottom">
+        <div class="action-buttons">
+            <button id="btn-spawn-stone" class="btn btn-primary" title="Натисніть або натисніть SPACE">
+                <span class="btn-icon">🪨</span> Дзен-камінь <kbd>SPACE</kbd>
+            </button>
+            <button id="btn-spawn-lantern" class="btn btn-secondary">
+                <span class="btn-icon">🏮</span> Ліхтарик
+            </button>
+            <button id="btn-spawn-wood" class="btn btn-secondary">
+                <span class="btn-icon">🪵</span> Сакурова куля
+            </button>
+            <button id="btn-water-surge" class="btn btn-accent">
+                <span class="btn-icon">🌊</span> Хвиля у ставку
+            </button>
+            <button id="btn-toggle-gui" class="btn btn-outline" title="Панель lil-gui">
+                <span class="btn-icon">🎛️</span> Налаштування
+            </button>
+        </div>
+        <div class="hud-physics-status">
+            <span>Каменів у саду: <b id="physics-count">0</b></span>
+            <span class="hint-text">ЛКМ — огляд саду, ПКМ — панорамування, колесо — масштаб</span>
+        </div>
+    </nav>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
